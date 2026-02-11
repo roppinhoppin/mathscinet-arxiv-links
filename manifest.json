@@ -5,7 +5,9 @@
   "description": "Adds arXiv links to MathSciNet entries.",
   "action": {},
   "permissions": [
-    "https://*.ams.org/*"
+    "https://*.ams.org/*",
+    "storage",
+    "contextMenus"
   ],
   "host_permissions": [
     "*://*.ams.org/*",
