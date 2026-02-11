@@ -1,0 +1,47 @@
+// from http://lehelk.com/2011/05/06/script-to-remove-diacritics/
+function removeDiacritics(str) {
+  const diacriticsRemovalMap = [
+    { 'base': 'A', 'letters': /[\u0041\u24B6\uFF21\u00C0\u00C1\u00C2\u1EA6\u1EA4\u1EAA\u1EA8\u00C3\u0100\u0102\u1EB0\u1EAE\u1EB4\u1EB2\u0226\u01E0\u00C4\u01DE\u1EA2\u00C5\u01FA\u01CD\u0200\u0202\u1EA0\u1EAC\u1EB6\u1E00\u0104\u023A\u2C6F]/g },
+    { 'base': 'C', 'letters': /[\u0043\u24B8\uFF23\u0106\u0108\u010A\u010C\u00C7]/g },
+    { 'base': 'D', 'letters': /[\u0044\u24B9\uFF24\u010E\u0110]/g },
+    { 'base': 'E', 'letters': /[\u0045\u24BA\uFF25\u00C8\u00C9\u00CA\u1EBE\u1EBC\u1EC2\u1EC0\u00CB\u1EBA\u0112\u1E14\u1E16\u0114\u0116\u1EB8\u1EC4\u1EC6\u0118\u0204\u0206\u2C6B]/g },
+    { 'base': 'G', 'letters': /[\u0047\u24BC\uFF27\u011C\u011E\u0120\u0122]/g },
+    { 'base': 'H', 'letters': /[\u0048\u24BD\uFF28\u0124\u0126]/g },
+    { 'base': 'I', 'letters': /[\u0049\u24BE\uFF29\u00CC\u00CD\u00CE\u00CF\u0128\u012A\u012C\u012E\u0130\u01CF\u0208\u020A\u1ECA]/g },
+    { 'base': 'J', 'letters': /[\u004A\u24BF\uFF2A\u0134]/g },
+    { 'base': 'K', 'letters': /[\u004B\u24C0\uFF2B\u0136]/g },
+    { 'base': 'L', 'letters': /[\u004C\u24C1\uFF2C\u0139\u013B\u013D\u013F\u0141]/g },
+    { 'base': 'N', 'letters': /[\u004E\u24C3\uFF2E\u0143\u0145\u0147\u00D1\u1E44\u1E48]/g },
+    { 'base': 'O', 'letters': /[\u004F\u24C4\uFF2F\u00D2\u00D3\u00D4\u1ED2\u1ED0\u1ED6\u1ED4\u00D5\u014C\u1E50\u1E52\u014E\u0150\u00D6\u022A\u022C\u1ECE\u1ED8\u1EDA\u1EDC\u1EE0\u1EDE\u01D1\u020C\u020E\u0152]/g },
+    { 'base': 'R', 'letters': /[\u0052\u24C7\uFF32\u0154\u0156\u0158\u0210\u0212]/g },
+    { 'base': 'S', 'letters': /[\u0053\u24C8\uFF33\u015A\u015C\u015E\u0160\u0218]/g },
+    { 'base': 'T', 'letters': /[\u0054\u24C9\uFF34\u0162\u0164\u0166\u021A]/g },
+    { 'base': 'U', 'letters': /[\u0055\u24CA\uFF35\u00D9\u00DA\u00DB\u0168\u016A\u016C\u016E\u0170\u00DC\u01D3\u01D5\u01D7\u01D9\u01DB\u0214\u0216\u1EE4\u1EE6\u1EE8\u1EEA\u1EEC\u1EEE]/g },
+    { 'base': 'W', 'letters': /[\u0057\u24CC\uFF37\u0174]/g },
+    { 'base': 'Y', 'letters': /[\u0059\u24CD\uFF39\u1EF2\u00DD\u0176\u1EF8\u0178\u1EF6\u1EF4]/g },
+    { 'base': 'Z', 'letters': /[\u005A\u24CE\uFF3A\u0179\u017B\u017D]/g },
+    { 'base': 'a', 'letters': /[\u0061\u24D0\uFF41\u1E9A\u00E0\u00E1\u00E2\u1EA7\u1EA5\u1EAB\u1EA9\u00E3\u0101\u0103\u1EB1\u1EAF\u1EB5\u1EB3\u0227\u01E1\u00E4\u01DF\u1EA3\u00E5\u01FB\u01CE\u0201\u0203\u1EA1\u1EAD\u1EB7\u1E01\u0105\u2C65\u0250]/g },
+    { 'base': 'c', 'letters': /[\u0063\u24D2\uFF43\u0107\u0109\u010B\u010D\u00E7]/g },
+    { 'base': 'd', 'letters': /[\u0064\u24D3\uFF44\u010F\u0111\u0256\u0257\u0180]/g },
+    { 'base': 'e', 'letters': /[\u0065\u24D4\uFF45\u00E8\u00E9\u00EA\u1EBF\u1EBD\u1EC3\u1EC1\u00EB\u1EBB\u0113\u1E15\u1E17\u0115\u0117\u1EB9\u1EC5\u1EC7\u0119\u0205\u0207]/g },
+    { 'base': 'g', 'letters': /[\u0067\u24D6\uFF47\u011D\u011F\u0121\u0123]/g },
+    { 'base': 'h', 'letters': /[\u0068\u24D7\uFF48\u0125\u0127\u0266\u1E96]/g },
+    { 'base': 'i', 'letters': /[\u0069\u24D8\uFF49\u00EC\u00ED\u00EE\u00EF\u0129\u012B\u012D\u012F\u0131\u01D0\u0209\u020B\u1ECB]/g },
+    { 'base': 'j', 'letters': /[\u006A\u24D9\uFF4A\u0135\u01F0]/g },
+    { 'base': 'k', 'letters': /[\u006B\u24DA\uFF4B\u0137\u0199]/g },
+    { 'base': 'l', 'letters': /[\u006C\u24DB\uFF4C\u013A\u013C\u013E\u0140\u0142\u019A]/g },
+    { 'base': 'n', 'letters': /[\u006E\u24DD\uFF4E\u0144\u0146\u0148\u00F1\u1E45\u1E49]/g },
+    { 'base': 'o', 'letters': /[\u006F\u24DE\uFF4F\u00F2\u00F3\u00F4\u1ED3\u1ED1\u1ED7\u1ED5\u00F5\u014D\u1E51\u1E53\u014F\u0151\u00F6\u022B\u022D\u1ECF\u1ED9\u1EDB\u1EDD\u1EE1\u1EDF\u01D2\u020D\u020F\u0153]/g },
+    { 'base': 'r', 'letters': /[\u0072\u24E1\uFF52\u0155\u0157\u0159\u0211\u0213]/g },
+    { 'base': 's', 'letters': /[\u0073\u24E2\uFF53\u015B\u015D\u015F\u0161\u0219\u00DF]/g },
+    { 'base': 't', 'letters': /[\u0074\u24E3\uFF54\u0163\u0165\u0167\u021B\u1E97]/g },
+    { 'base': 'u', 'letters': /[\u0075\u24E4\uFF55\u00F9\u00FA\u00FB\u0169\u016B\u016D\u016F\u0171\u00FC\u01D4\u01D6\u01D8\u01DA\u01DC\u0215\u0217\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF]/g },
+    { 'base': 'w', 'letters': /[\u0077\u24E6\uFF57\u0175]/g },
+    { 'base': 'y', 'letters': /[\u0078\u24E8\uFF59\u1EF3\u00FD\u0177\u1EF9\u00FF\u1EF7\u1EF5]/g },
+    { 'base': 'z', 'letters': /[\u007A\u24E9\uFF5A\u017A\u1E91\u017C\u017E\u1E93\u1E95\u01B6\u0225\u0240\u2C6C\uA763]/g }
+  ];
+  for (let i = 0; i < diacriticsRemovalMap.length; i++) {
+    str = str.replace(diacriticsRemovalMap[i].letters, diacriticsRemovalMap[i].base);
+  }
+  return str;
+}

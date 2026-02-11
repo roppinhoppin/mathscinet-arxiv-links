@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "MathSciNet ArXiv Links",
+  "version": "1.0",
+  "description": "Adds arXiv links to MathSciNet entries.",
+  "action": {},
+  "permissions": [
+    "https://*.ams.org/*"
+  ],
+  "host_permissions": [
+    "*://*.ams.org/*",
+    "*://export.arxiv.org/*",
+    "*://arxiv.org/*",
+    "*://api.openalex.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.ams.org/mathscinet*",
+        "*://mathscinet.ams.org/mathscinet*",
+        "*://ams.rice.edu/mathscinet*",
+        "*://ams.impa.br/mathscinet*",
+        "*://ams.math.uni-bielefeld.de/mathscinet*",
+        "*://ams.mpim-bonn.mpg.de/mathscinet*",
+        "*://ams.u-strasbg.fr/mathscinet*"
+      ],
+      "js": ["utils.js", "content.js"]
+    }
+  ]
+}
