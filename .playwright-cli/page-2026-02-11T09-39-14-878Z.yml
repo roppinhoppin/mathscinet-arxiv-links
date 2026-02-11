@@ -1,0 +1,576 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "SKIP TO MAIN CONTENT" [ref=e4] [cursor=pointer]:
+      - /url: "#main-content"
+    - link "SKIP TO MAIN CONTENT" [ref=e5] [cursor=pointer]:
+      - /url: "#main-content"
+    - navigation [ref=e6]:
+      - link "MathSciNet Home" [ref=e7] [cursor=pointer]:
+        - /url: /mathscinet
+        - img "MathSciNet Home" [ref=e8]
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Home" [ref=e12] [cursor=pointer]:
+            - /url: /mathscinet/
+        - listitem [ref=e13]:
+          - link "Resources" [ref=e14] [cursor=pointer]:
+            - /url: /mathscinet/help/resources
+        - listitem [ref=e15]:
+          - link "Reviewers" [ref=e16] [cursor=pointer]:
+            - /url: /mresubs/index.html
+            - generic [ref=e17]: Reviewers
+        - listitem [ref=e18]:
+          - link "Free Tools" [ref=e19] [cursor=pointer]:
+            - /url: /mathscinet/freetools
+        - listitem [ref=e20]:
+          - link "Support" [ref=e21] [cursor=pointer]:
+            - /url: /mathscinet/help/support
+        - listitem [ref=e22]:
+          - link "Help Pages" [ref=e23] [cursor=pointer]:
+            - /url: /mathscinet/info/index.html
+            - generic [ref=e24]: Help Pages
+    - link "Okinawa Institute of Science and Technology Promotion Corporation" [ref=e28] [cursor=pointer]:
+      - /url: https://www.ams.org/pairing/pair_my_device.html
+      - generic [ref=e29]: Okinawa Institute of Science and Technology Promotion Corporation
+      - img [ref=e30]
+  - main [ref=e32]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "Honda, Shouhei" [level=1] [ref=e36]
+        - generic [ref=e37]:
+          - separator [ref=e39]
+          - img "American Mathematical Society" [ref=e41]
+      - generic [ref=e43]:
+        - button "Share" [ref=e44] [cursor=pointer]:
+          - img [ref=e45]
+          - text: Share
+        - button "Login to edit" [ref=e48] [cursor=pointer]:
+          - img [ref=e49]
+          - text: Login to edit
+      - generic [ref=e51]:
+        - generic [ref=e54]: H
+        - generic [ref=e58]:
+          - table [ref=e60]:
+            - row "MR Author ID 892314" [ref=e61]:
+              - rowheader "MR Author ID" [ref=e62]
+              - cell "892314" [ref=e63]
+            - row "Earliest Indexed Publication 2009" [ref=e64]:
+              - rowheader "Earliest Indexed Publication" [ref=e65]
+              - cell "2009" [ref=e66]:
+                - link "2009" [ref=e67] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20y%3A2009
+            - row "Total Publications 38" [ref=e68]:
+              - rowheader "Total Publications" [ref=e69]
+              - cell "38" [ref=e70]:
+                - link "38" [ref=e71] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314
+            - row "Total Related Publications 0" [ref=e72]:
+              - rowheader "Total Related Publications" [ref=e73]
+              - cell "0" [ref=e74]:
+                - generic [ref=e75]: "0"
+            - row "Total Reviews 18" [ref=e76]:
+              - rowheader "Total Reviews" [ref=e77]
+              - cell "18" [ref=e78]:
+                - link "18" [ref=e79] [cursor=pointer]:
+                  - /url: "#"
+            - row "Total Citations 468 in 204 publications" [ref=e80]:
+              - rowheader "Total Citations" [ref=e81]
+              - cell "468 in 204 publications" [ref=e82]:
+                - link "468 in 204 publications" [ref=e83] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=rla%3A892314
+            - row "Unique Citing Authors 204" [ref=e84]:
+              - rowheader "Unique Citing Authors" [ref=e85]
+              - cell "204" [ref=e86]
+          - table [ref=e88]:
+            - row "Collaboration Distance" [ref=e89]:
+              - cell "Collaboration Distance" [ref=e90]:
+                - link "Collaboration Distance" [ref=e91] [cursor=pointer]:
+                  - /url: /mathscinet/freetools/collab-dist?source=892314
+            - row "Mathematics Genealogy Project" [ref=e92]:
+              - cell "Mathematics Genealogy Project" [ref=e93]:
+                - link "Mathematics Genealogy Project" [ref=e94] [cursor=pointer]:
+                  - /url: https://www.mathgenealogy.org/id.php?id=230589
+            - row
+      - generic [ref=e95]:
+        - generic [ref=e97]:
+          - heading "Classifications (4)" [level=2] [ref=e101]
+          - table [ref=e104]:
+            - rowgroup [ref=e105]:
+              - row "Classification (Click to sort ascending) Publications (Click to sort ascending) Citations (Click to sort ascending)" [ref=e106]:
+                - columnheader "Classification (Click to sort ascending)" [ref=e107] [cursor=pointer]:
+                  - generic [ref=e108]: Classification
+                  - generic [ref=e109]: (Click to sort ascending)
+                - columnheader "Publications (Click to sort ascending)" [ref=e110] [cursor=pointer]:
+                  - generic [ref=e111]: Publications
+                  - generic [ref=e112]: (Click to sort ascending)
+                - columnheader "Citations (Click to sort ascending)" [ref=e113] [cursor=pointer]:
+                  - generic [ref=e114]: Citations
+                  - generic [ref=e115]: (Click to sort ascending)
+            - rowgroup [ref=e116]:
+              - row "53 - Differential geometry 35 415" [ref=e117]:
+                - cell "53 - Differential geometry" [ref=e118]:
+                  - link "53 - Differential geometry" [ref=e119] [cursor=pointer]:
+                    - /url: /mathscinet/msc-search?text=53
+                - cell "35" [ref=e120]:
+                  - link "35" [ref=e121] [cursor=pointer]:
+                    - /url: /mathscinet/publications-search?query=auid%3A892314%20pc%3A53&sort=newest
+                - cell "415" [ref=e122]
+              - row "58 - Global analysis, analysis on manifolds 1 41" [ref=e123]:
+                - cell "58 - Global analysis, analysis on manifolds" [ref=e124]:
+                  - link "58 - Global analysis, analysis on manifolds" [ref=e125] [cursor=pointer]:
+                    - /url: /mathscinet/msc-search?text=58
+                - cell "1" [ref=e126]:
+                  - link "1" [ref=e127] [cursor=pointer]:
+                    - /url: /mathscinet/publications-search?query=auid%3A892314%20pc%3A58&sort=newest
+                - cell "41" [ref=e128]
+              - row "47 - Operator theory 1 5" [ref=e129]:
+                - cell "47 - Operator theory" [ref=e130]:
+                  - link "47 - Operator theory" [ref=e131] [cursor=pointer]:
+                    - /url: /mathscinet/msc-search?text=47
+                - cell "1" [ref=e132]:
+                  - link "1" [ref=e133] [cursor=pointer]:
+                    - /url: /mathscinet/publications-search?query=auid%3A892314%20pc%3A47&sort=newest
+                - cell "5" [ref=e134]
+              - row "46 - Functional analysis 1 7" [ref=e135]:
+                - cell "46 - Functional analysis" [ref=e136]:
+                  - link "46 - Functional analysis" [ref=e137] [cursor=pointer]:
+                    - /url: /mathscinet/msc-search?text=46
+                - cell "1" [ref=e138]:
+                  - link "1" [ref=e139] [cursor=pointer]:
+                    - /url: /mathscinet/publications-search?query=auid%3A892314%20pc%3A46&sort=newest
+                - cell "7" [ref=e140]
+        - generic [ref=e142]:
+          - heading "Coauthors (23)" [level=2] [ref=e146]
+          - generic [ref=e148]:
+            - table [ref=e149]:
+              - rowgroup [ref=e150]:
+                - row "Name Collaborations" [ref=e151]:
+                  - columnheader "Name" [ref=e152] [cursor=pointer]
+                  - columnheader "Collaborations" [ref=e153] [cursor=pointer]
+              - rowgroup [ref=e154]:
+                - row "Ambrosio, Luigi1 5" [ref=e155]:
+                  - cell "Ambrosio, Luigi1" [ref=e156]:
+                    - link "Ambrosio, Luigi1" [ref=e157] [cursor=pointer]:
+                      - /url: /mathscinet/author?authorId=25430
+                      - generic [ref=e158]:
+                        - text: Ambrosio, Luigi
+                        - superscript [ref=e159]: "1"
+                  - cell "5" [ref=e160]:
+                    - link "5" [ref=e161] [cursor=pointer]:
+                      - /url: /mathscinet/publications-search?query=auid%3A25430%20auid%3A892314
+                - row "Mondello, Ilaria 2" [ref=e162]:
+                  - cell "Mondello, Ilaria" [ref=e163]:
+                    - link "Mondello, Ilaria" [ref=e164] [cursor=pointer]:
+                      - /url: /mathscinet/author?authorId=1195025
+                      - generic [ref=e165]: Mondello, Ilaria
+                  - cell "2" [ref=e166]:
+                    - link "2" [ref=e167] [cursor=pointer]:
+                      - /url: /mathscinet/publications-search?query=auid%3A1195025%20auid%3A892314
+                - row "Peng, Yuanlin 2" [ref=e168]:
+                  - cell "Peng, Yuanlin" [ref=e169]:
+                    - link "Peng, Yuanlin" [ref=e170] [cursor=pointer]:
+                      - /url: /mathscinet/author?authorId=1581392
+                      - generic [ref=e171]: Peng, Yuanlin
+                  - cell "2" [ref=e172]:
+                    - link "2" [ref=e173] [cursor=pointer]:
+                      - /url: /mathscinet/publications-search?query=auid%3A1581392%20auid%3A892314
+                - row "Portegies, Jacobus W. 2" [ref=e174]:
+                  - cell "Portegies, Jacobus W." [ref=e175]:
+                    - link "Portegies, Jacobus W." [ref=e176] [cursor=pointer]:
+                      - /url: /mathscinet/author?authorId=902819
+                      - generic [ref=e177]: Portegies, Jacobus W.
+                  - cell "2" [ref=e178]:
+                    - link "2" [ref=e179] [cursor=pointer]:
+                      - /url: /mathscinet/publications-search?query=auid%3A902819%20auid%3A892314
+                - row "Tewodrose, David 2" [ref=e180]:
+                  - cell "Tewodrose, David" [ref=e181]:
+                    - link "Tewodrose, David" [ref=e182] [cursor=pointer]:
+                      - /url: /mathscinet/author?authorId=1253627
+                      - generic [ref=e183]: Tewodrose, David
+                  - cell "2" [ref=e184]:
+                    - link "2" [ref=e185] [cursor=pointer]:
+                      - /url: /mathscinet/publications-search?query=auid%3A1253627%20auid%3A892314
+            - button "Show More" [ref=e186] [cursor=pointer]
+            - button "Show All" [ref=e187] [cursor=pointer]
+            - button "Show Less" [disabled] [ref=e188]
+      - generic [ref=e191]:
+        - heading "Publications" [level=2] [ref=e195]
+        - generic [ref=e198]:
+          - tablist [ref=e200]:
+            - tab "Authored" [selected] [ref=e201] [cursor=pointer]
+            - tab "Most Cited" [ref=e202] [cursor=pointer]
+            - tab "Reviews" [ref=e203] [cursor=pointer]
+          - tabpanel "Authored" [ref=e205]:
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - link "38 results" [ref=e216] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314&sort=newest&order=desc
+                - generic [ref=e217]:
+                  - button "Filters" [ref=e218] [cursor=pointer]:
+                    - img [ref=e219]
+                    - text: Filters
+                  - group [ref=e221]:
+                    - generic "Sorting method" [ref=e222]:
+                      - button "Newest" [ref=e223] [cursor=pointer]
+                - button "Export" [ref=e225] [cursor=pointer]:
+                  - text: Export
+                  - img [ref=e226]
+                - generic [ref=e228]:
+                  - generic:
+                    - combobox "Max results per page" [ref=e229]:
+                      - option "5" [selected]
+                      - option "10"
+                      - option "20"
+                      - option "50"
+                      - option "100"
+                    - menubar "Pagination" [ref=e230]:
+                      - listitem [ref=e231]:
+                        - menuitem [disabled]: First
+                      - listitem [ref=e232]:
+                        - menuitem [disabled]: Prev
+                      - menuitemradio "Go to page 1" [checked] [ref=e233] [cursor=pointer]: "1"
+                      - menuitemradio "Go to page 2" [ref=e234] [cursor=pointer]: "2"
+                      - menuitemradio "Go to page 3" [ref=e235] [cursor=pointer]: "3"
+                      - menuitemradio "Go to page 4" [ref=e236] [cursor=pointer]: "4"
+                      - separator [ref=e237]:
+                        - generic: …
+                      - menuitem "Go to next page" [ref=e238] [cursor=pointer]: Next
+              - separator [ref=e239]
+              - generic [ref=e240]:
+                - generic [ref=e244]:
+                  - generic [ref=e245]:
+                    - generic [ref=e246]:
+                      - link "MR4947866" [ref=e247] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4947866
+                      - text: "-"
+                      - 'link "Sharp gradient estimate, rigidity and almost rigidity of Green functions on non-parabolic {\\rm RCD}(0, N) spaces" [ref=e248] [cursor=pointer]':
+                        - /url: /mathscinet/article?mr=4947866
+                        - generic [ref=e249]: "Sharp gradient estimate, rigidity and almost rigidity of Green functions on non-parabolic {\\rm RCD}(0, N) spaces"
+                    - generic [ref=e250]:
+                      - generic [ref=e251]:
+                        - link "Honda, Shouhei" [ref=e252] [cursor=pointer]:
+                          - /url: /mathscinet/author?authorId=892314
+                        - text: ;
+                      - link "Peng, Yuanlin" [ref=e254] [cursor=pointer]:
+                        - /url: /mathscinet/author?authorId=1581392
+                      - generic [ref=e255]:
+                        - generic [ref=e256]:
+                          - generic [ref=e257]:
+                            - link "Proc. Roy. Soc. Edinburgh Sect. A" [ref=e259] [cursor=pointer]:
+                              - /url: /mathscinet/serials/profile?journalId=2182
+                            - generic [ref=e260]:
+                              - link "155" [ref=e262] [cursor=pointer]:
+                                - /url: /mathscinet/publications-search?query=ji%3A2182%20y%3A2025%20v%3A155
+                              - generic [ref=e263]:
+                                - text: (
+                                - link "2025" [ref=e265] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A2182%20y%3A2025
+                                - text: )
+                              - generic "Issue number" [ref=e266]:
+                                - text: ", no."
+                                - link "4" [ref=e267] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A2182%20y%3A2025%20v%3A155%20iss%3A4
+                          - text: ", 1267–1320"
+                        - text: .
+                  - generic [ref=e269]:
+                    - generic [ref=e270]:
+                      - generic [ref=e272]: Pending
+                      - link "MSC 53C23" [ref=e273] [cursor=pointer]:
+                        - /url: /mathscinet/publications-search?query=pc%3A%2253C23%22
+                    - link "Article" [ref=e275] [cursor=pointer]:
+                      - /url: https://doi.org/10.1017/prm.2023.131
+                      - img [ref=e276]
+                      - text: Article
+                    - link "Access this article from your institution" [ref=e279] [cursor=pointer]:
+                      - /url: https://oist.on.worldcat.org/atoztitles/link?ctx_ver=Z39.88-2004&ctx_enc=info:ofi/enc:UTF-8&rfr_id=info:sid/ams.org:MathSciNet&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:doi/10.1017%2Fprm.2023.131&rft.aufirst=Shouhei&rft.auinit=S&rft.auinit1=S&rft.auinitm=&rft.aulast=Honda&rft.genre=article&rft.issn=03082105&rft.title=Proceedings+of+the+Royal+Society+of+Edinburgh +Section+A +Mathematics&rft.atitle=Sharp+gradient+estimate%2C+rigidity+and+almost+rigidity+of+Green+functions+on+non-parabolic+%24%7B%5Crm+RCD%7D%280%2C+N%29%24+spaces&rft.stitle=Proc +Roy +Soc +Edinburgh+Sect +A&rft.volume=155&rft.date=2025&rft.spage=1267&rft.epage=1320&rft.pages=1267-1320&rft.issue=4&rft.jtitle=Proceedings+of+the+Royal+Society+of+Edinburgh +Section+A +Mathematics
+                      - img
+                - generic [ref=e284]:
+                  - generic [ref=e285]:
+                    - generic [ref=e286]:
+                      - link "MR4921364" [ref=e287] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4921364
+                      - text: "-"
+                      - 'link "A characterization of non-collapsed {\\rm RCD}(K, N) spaces via Einstein tensors" [ref=e288] [cursor=pointer]':
+                        - /url: /mathscinet/article?mr=4921364
+                        - generic [ref=e289]: "A characterization of non-collapsed {\\rm RCD}(K, N) spaces via Einstein tensors"
+                    - generic [ref=e290]:
+                      - generic [ref=e291]:
+                        - link "Honda, Shouhei" [ref=e292] [cursor=pointer]:
+                          - /url: /mathscinet/author?authorId=892314
+                        - text: ;
+                      - link "Zhu, Xingyu" [ref=e294] [cursor=pointer]:
+                        - /url: /mathscinet/author?authorId=1543161
+                      - generic [ref=e295]:
+                        - generic [ref=e296]:
+                          - generic [ref=e297]:
+                            - link "Ann. Inst. Fourier (Grenoble)" [ref=e299] [cursor=pointer]:
+                              - /url: /mathscinet/serials/profile?journalId=1589
+                            - generic [ref=e300]:
+                              - link "75" [ref=e302] [cursor=pointer]:
+                                - /url: /mathscinet/publications-search?query=ji%3A1589%20y%3A2025%20v%3A75
+                              - generic [ref=e303]:
+                                - text: (
+                                - link "2025" [ref=e305] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A1589%20y%3A2025
+                                - text: )
+                              - generic "Issue number" [ref=e306]:
+                                - text: ", no."
+                                - link "2" [ref=e307] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A1589%20y%3A2025%20v%3A75%20iss%3A2
+                          - text: ", 723–768"
+                        - text: .
+                  - generic [ref=e309]:
+                    - generic [ref=e310]:
+                      - generic [ref=e312]: Pending
+                      - link "MSC 53C23" [ref=e313] [cursor=pointer]:
+                        - /url: /mathscinet/publications-search?query=pc%3A%2253C23%22
+                    - link "Article" [ref=e315] [cursor=pointer]:
+                      - /url: https://doi.org/10.5802/aif.3652
+                      - img [ref=e316]
+                      - text: Article
+                    - link "Access this article from your institution" [ref=e319] [cursor=pointer]:
+                      - /url: https://oist.on.worldcat.org/atoztitles/link?ctx_ver=Z39.88-2004&ctx_enc=info:ofi/enc:UTF-8&rfr_id=info:sid/ams.org:MathSciNet&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:doi/10.5802%2Faif.3652&rft.aufirst=Shouhei&rft.auinit=S&rft.auinit1=S&rft.auinitm=&rft.aulast=Honda&rft.genre=article&rft.issn=03730956&rft.title=Universit%C3%A9+de+Grenoble +Annales+de+l%27Institut+Fourier&rft.atitle=A+characterization+of+non-collapsed+%24%7B%5Crm+RCD%7D%28K%2C+N%29%24+spaces+via+Einstein+tensors&rft.stitle=Ann +Inst +Fourier+%28Grenoble%29&rft.volume=75&rft.date=2025&rft.spage=723&rft.epage=768&rft.pages=723-768&rft.issue=2&rft.jtitle=Universit%C3%A9+de+Grenoble +Annales+de+l%27Institut+Fourier
+                      - img
+                    - generic [ref=e322] [cursor=pointer]: Open Access
+                - generic [ref=e326]:
+                  - generic [ref=e327]:
+                    - generic [ref=e328]:
+                      - link "MR4878953" [ref=e329] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4878953
+                      - text: "-"
+                      - link "Poincaré inequality for one-forms on four manifolds with bounded Ricci curvature" [ref=e330] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4878953
+                    - generic [ref=e331]:
+                      - generic [ref=e332]:
+                        - link "Honda, Shouhei" [ref=e333] [cursor=pointer]:
+                          - /url: /mathscinet/author?authorId=892314
+                        - text: ;
+                      - link "Mondino, Andrea" [ref=e335] [cursor=pointer]:
+                        - /url: /mathscinet/author?authorId=910857
+                      - generic [ref=e336]:
+                        - generic [ref=e337]:
+                          - generic [ref=e338]:
+                            - link "Arch. Math. (Basel)" [ref=e340] [cursor=pointer]:
+                              - /url: /mathscinet/serials/profile?journalId=897
+                            - generic [ref=e341]:
+                              - link "124" [ref=e343] [cursor=pointer]:
+                                - /url: /mathscinet/publications-search?query=ji%3A897%20y%3A2025%20v%3A124
+                              - generic [ref=e344]:
+                                - text: (
+                                - link "2025" [ref=e346] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A897%20y%3A2025
+                                - text: )
+                              - generic "Issue number" [ref=e347]:
+                                - text: ", no."
+                                - link "4" [ref=e348] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A897%20y%3A2025%20v%3A124%20iss%3A4
+                          - text: ", 449–455"
+                        - text: .
+                      - generic [ref=e349]:
+                        - text: "(Reviewer:"
+                        - link "Munteanu, Ovidiu" [ref=e351] [cursor=pointer]:
+                          - /url: /mathscinet/author?authorId=698338
+                        - text: )
+                  - generic [ref=e353]:
+                    - generic [ref=e354]:
+                      - generic [ref=e356]: Reviewed
+                      - link "1 citations" [ref=e358] [cursor=pointer]:
+                        - /url: /mathscinet/publications-search?query=cp%3A4878953
+                      - link "MSC 53C21" [ref=e359] [cursor=pointer]:
+                        - /url: /mathscinet/publications-search?query=pc%3A%2253C21%22
+                    - link "Article" [ref=e361] [cursor=pointer]:
+                      - /url: https://doi.org/10.1007/s00013-024-02091-w
+                      - img [ref=e362]
+                      - text: Article
+                    - link "Access this article from your institution" [ref=e365] [cursor=pointer]:
+                      - /url: https://oist.on.worldcat.org/atoztitles/link?ctx_ver=Z39.88-2004&ctx_enc=info:ofi/enc:UTF-8&rfr_id=info:sid/ams.org:MathSciNet&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:doi/10.1007%2Fs00013-024-02091-w&rft.aufirst=Shouhei&rft.auinit=S&rft.auinit1=S&rft.auinitm=&rft.aulast=Honda&rft.genre=article&rft.issn=0003889X&rft.title=Archiv+der+Mathematik&rft.atitle=Poincar%C3%A9+inequality+for+one-forms+on+four+manifolds+with+bounded+Ricci+curvature&rft.stitle=Arch +Math +%28Basel%29&rft.volume=124&rft.date=2025&rft.spage=449&rft.epage=455&rft.pages=449-455&rft.issue=4&rft.jtitle=Archiv+der+Mathematik
+                      - img
+                - generic [ref=e370]:
+                  - generic [ref=e371]:
+                    - generic [ref=e372]:
+                      - link "MR4818014" [ref=e373] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4818014
+                      - text: "-"
+                      - link "Metric measure spaces with Ricci bounds from below" [ref=e374] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4818014
+                    - generic [ref=e375]:
+                      - link "Honda, Shouhei" [ref=e377] [cursor=pointer]:
+                        - /url: /mathscinet/author?authorId=892314
+                      - generic [ref=e378]:
+                        - generic [ref=e379]:
+                          - generic [ref=e380]:
+                            - link "Sugaku Expositions" [ref=e382] [cursor=pointer]:
+                              - /url: /mathscinet/serials/profile?journalId=3553
+                            - generic [ref=e383]:
+                              - link "37" [ref=e385] [cursor=pointer]:
+                                - /url: /mathscinet/publications-search?query=ji%3A3553%20y%3A2024%20v%3A37
+                              - generic [ref=e386]:
+                                - text: (
+                                - link "2024" [ref=e388] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A3553%20y%3A2024
+                                - text: )
+                              - generic "Issue number" [ref=e389]:
+                                - text: ", no."
+                                - link "2" [ref=e390] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A3553%20y%3A2024%20v%3A37%20iss%3A2
+                          - text: ", 179–201"
+                        - text: .
+                  - generic [ref=e392]:
+                    - generic [ref=e393]:
+                      - generic [ref=e395]: Summary
+                      - link "MSC 53C20" [ref=e396] [cursor=pointer]:
+                        - /url: /mathscinet/publications-search?query=pc%3A%2253C20%22
+                    - link "Access this article from your institution" [ref=e398] [cursor=pointer]:
+                      - /url: https://oist.on.worldcat.org/atoztitles/link?ctx_ver=Z39.88-2004&ctx_enc=info:ofi/enc:UTF-8&rfr_id=info:sid/ams.org:MathSciNet&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft.aufirst=Shouhei&rft.auinit=S&rft.auinit1=S&rft.auinitm=&rft.aulast=Honda&rft.genre=article&rft.issn=08989583&rft.title=Sugaku+Expositions&rft.atitle=Metric+measure+spaces+with+Ricci+bounds+from+below&rft.stitle=Sugaku+Expositions&rft.volume=37&rft.date=2024&rft.spage=179&rft.epage=201&rft.pages=179-201&rft.issue=2&rft.jtitle=Sugaku+Expositions
+                      - img
+                - generic [ref=e403]:
+                  - generic [ref=e404]:
+                    - generic [ref=e405]:
+                      - link "MR4815699" [ref=e406] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4815699
+                      - text: "-"
+                      - link "Spectral distances on RCD spaces" [ref=e407] [cursor=pointer]:
+                        - /url: /mathscinet/article?mr=4815699
+                    - generic [ref=e408]:
+                      - link "Honda, Shouhei" [ref=e410] [cursor=pointer]:
+                        - /url: /mathscinet/author?authorId=892314
+                      - generic [ref=e411]:
+                        - generic [ref=e412]:
+                          - generic [ref=e413]:
+                            - link "Math. Z." [ref=e415] [cursor=pointer]:
+                              - /url: /mathscinet/serials/profile?journalId=1017
+                            - generic [ref=e416]:
+                              - link "308" [ref=e418] [cursor=pointer]:
+                                - /url: /mathscinet/publications-search?query=ji%3A1017%20y%3A2024%20v%3A308
+                              - generic [ref=e419]:
+                                - text: (
+                                - link "2024" [ref=e421] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A1017%20y%3A2024
+                                - text: )
+                              - generic "Issue number" [ref=e422]:
+                                - text: ", no."
+                                - link "4" [ref=e423] [cursor=pointer]:
+                                  - /url: /mathscinet/publications-search?query=ji%3A1017%20y%3A2024%20v%3A308%20iss%3A4
+                          - text: ", Paper No. 67, 26 pp"
+                        - text: .
+                      - generic [ref=e424]:
+                        - text: "(Reviewer:"
+                        - link "Pasqualetto, Enrico" [ref=e426] [cursor=pointer]:
+                          - /url: /mathscinet/author?authorId=1358786
+                        - text: )
+                  - generic [ref=e428]:
+                    - generic [ref=e429]:
+                      - generic [ref=e431]: Reviewed
+                      - link "1 citations" [ref=e433] [cursor=pointer]:
+                        - /url: /mathscinet/publications-search?query=cp%3A4815699
+                      - link "MSC 53C23" [ref=e434] [cursor=pointer]:
+                        - /url: /mathscinet/publications-search?query=pc%3A%2253C23%22
+                    - link "Article" [ref=e436] [cursor=pointer]:
+                      - /url: https://doi.org/10.1007/s00209-024-03616-3
+                      - img [ref=e437]
+                      - text: Article
+                    - link "Access this article from your institution" [ref=e440] [cursor=pointer]:
+                      - /url: https://oist.on.worldcat.org/atoztitles/link?ctx_ver=Z39.88-2004&ctx_enc=info:ofi/enc:UTF-8&rfr_id=info:sid/ams.org:MathSciNet&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:doi/10.1007%2Fs00209-024-03616-3&rft.aufirst=Shouhei&rft.auinit=S&rft.auinit1=S&rft.auinitm=&rft.aulast=Honda&rft.genre=article&rft.issn=00255874&rft.title=Mathematische+Zeitschrift&rft.atitle=Spectral+distances+on+RCD+spaces&rft.stitle=Math +Z &rft.volume=308&rft.date=2024&rft.spage=67&rft.epage=26&rft.pages=67-26&rft.issue=4&rft.jtitle=Mathematische+Zeitschrift
+                      - img
+              - generic [ref=e444]:
+                - generic:
+                  - combobox "Max results per page" [ref=e445]:
+                    - option "5" [selected]
+                    - option "10"
+                    - option "20"
+                    - option "50"
+                    - option "100"
+                  - menubar "Pagination" [ref=e446]:
+                    - listitem [ref=e447]:
+                      - menuitem [disabled]: First
+                    - listitem [ref=e448]:
+                      - menuitem [disabled]: Prev
+                    - menuitemradio "Go to page 1" [checked] [ref=e449] [cursor=pointer]: "1"
+                    - menuitemradio "Go to page 2" [ref=e450] [cursor=pointer]: "2"
+                    - menuitemradio "Go to page 3" [ref=e451] [cursor=pointer]: "3"
+                    - menuitemradio "Go to page 4" [ref=e452] [cursor=pointer]: "4"
+                    - separator [ref=e453]:
+                      - generic: …
+                    - menuitem "Go to next page" [ref=e454] [cursor=pointer]: Next
+      - generic [ref=e455]:
+        - generic [ref=e457]:
+          - heading "Publications by Journal" [level=2] [ref=e461]
+          - generic [ref=e463]:
+            - combobox "Journal sort" [ref=e464]:
+              - option "Most Published" [selected]
+              - option "Least Published"
+              - option "Alphabetical"
+            - menubar "Pagination" [ref=e465]:
+              - listitem [ref=e466]:
+                - menuitem [disabled]: Prev
+              - menuitemradio "Go to page 1" [checked] [ref=e467] [cursor=pointer]: "1"
+              - menuitemradio "Go to page 2" [ref=e468] [cursor=pointer]: "2"
+              - menuitemradio "Go to page 3" [ref=e469] [cursor=pointer]: "3"
+              - menuitemradio "Go to page 4" [ref=e470] [cursor=pointer]: "4"
+              - menuitemradio "Go to page 5" [ref=e471] [cursor=pointer]: "5"
+              - separator [ref=e472]:
+                - generic: …
+              - menuitem "Go to next page" [ref=e473] [cursor=pointer]: Next
+            - generic [ref=e474]:
+              - generic [ref=e475]:
+                - link "Nonlinear Analysis. Theory, Methods \\& Applications. An International Multidisciplinary Journal" [ref=e476] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?journalId=2819
+                - generic [ref=e477]: Nonlinear Anal.
+                - link "3 publications" [ref=e478] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20ji%3A2819
+              - generic [ref=e479]:
+                - link "Journal of the Mathematical Society of Japan" [ref=e480] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?journalId=2469
+                - generic [ref=e481]: J. Math. Soc. Japan
+                - link "2 publications" [ref=e482] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20ji%3A2469
+              - generic [ref=e483]:
+                - link "Journal für die Reine und Angewandte Mathematik. [Crelle's Journal]" [ref=e484] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?journalId=2869
+                - generic [ref=e485]: J. Reine Angew. Math.
+                - link "2 publications" [ref=e486] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20ji%3A2869
+              - generic [ref=e487]:
+                - link "Mathematical Society of Japan. Sūgaku (Mathematics)" [ref=e488] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?journalId=3020
+                - generic [ref=e489]: Sūgaku
+                - link "2 publications" [ref=e490] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20ji%3A3020
+              - generic [ref=e491]:
+                - link "Sugaku Expositions" [ref=e492] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?journalId=3553
+                - generic [ref=e493]: Sugaku Expositions
+                - link "2 publications" [ref=e494] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20ji%3A3553
+        - generic [ref=e496]:
+          - heading "Publications by Series" [level=2] [ref=e500]
+          - generic [ref=e502]:
+            - combobox "Series sort" [ref=e503]:
+              - option "Most Published" [selected]
+              - option "Least Published"
+              - option "Alphabetical"
+            - menubar "Pagination" [ref=e504]:
+              - listitem [ref=e505]:
+                - menuitem [disabled]: Prev
+              - menuitemradio "Go to page 1" [checked] [ref=e506] [cursor=pointer]: "1"
+              - listitem [ref=e507]:
+                - menuitem [disabled]: Next
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - link "Advanced Studies in Pure Mathematics" [ref=e510] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?seriesId=3432
+                - generic [ref=e511]: Adv. Stud. Pure Math.
+                - link "1 publication" [ref=e512] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20si%3A3432
+              - generic [ref=e513]:
+                - link "Springer Proceedings in Mathematics \\& Statistics" [ref=e514] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?seriesId=5533
+                - generic [ref=e515]: Springer Proc. Math. Stat.
+                - link "1 publication" [ref=e516] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20si%3A5533
+              - generic [ref=e517]:
+                - link "Partial Differential Equations and Measure Theory" [ref=e518] [cursor=pointer]:
+                  - /url: /mathscinet/serials/profile?seriesId=5908
+                - generic [ref=e519]: Partial Differ. Equ. Meas. Theory
+                - link "1 publication" [ref=e520] [cursor=pointer]:
+                  - /url: /mathscinet/publications-search?query=auid%3A892314%20si%3A5908

@@ -1,11 +1,12 @@
 const DEBUG = true;
-const VERSION = "1.15-SWITCHABLE-SOURCE";
+const VERSION = "1.16-SOFT-RELIABLE";
 const SOURCE_MODE_KEY = "arxivSourceMode";
 const SOURCE_MODES = {
   AUTO: "auto",
   OPENALEX: "openalex",
   ARXIV: "arxiv"
 };
+const SEARCH_CONCURRENCY = 4;
 const TITLE_STOP_WORDS = new Set([
   "a", "an", "the", "to", "of", "on", "for", "and", "or", "in", "by", "with", "via", "at", "from"
 ]);
@@ -85,12 +86,32 @@ function cleanAuthorName(name) {
 function normalizeTitleForSearch(title) {
   if (!title) return "";
   let normalized = title.replace(/--+/g, '-').trim();
+  // MathSciNet titles can contain TeX-like fragments; strip them for softer search.
+  normalized = normalized.replace(/\\rm\b/gi, ' ');
+  normalized = normalized.replace(/\\ast\b/gi, ' ');
+  normalized = normalized.replace(/[{}\\]/g, ' ');
+  normalized = normalized.replace(/\^[A-Za-z0-9*]+/g, ' ');
+  normalized = normalized.replace(/\bL(\d+)L\^\1\b/gi, 'L$1');
+  normalized = normalized.replace(/\b([A-Za-z])\1?_p\b/g, '$1');
   if (typeof removeDiacritics === "function") {
     normalized = removeDiacritics(normalized);
   }
   normalized = normalized.replace(/[^A-Za-z0-9\s-]/g, ' ');
   normalized = normalized.replace(/\s+/g, ' ').trim();
   return normalized;
+}
+
+async function mapWithConcurrency(items, worker, concurrency = SEARCH_CONCURRENCY) {
+  const maxWorkers = Math.max(1, Math.min(concurrency, items.length));
+  let nextIndex = 0;
+  const runners = Array.from({ length: maxWorkers }, async () => {
+    while (nextIndex < items.length) {
+      const current = nextIndex;
+      nextIndex += 1;
+      await worker(items[current], current);
+    }
+  });
+  await Promise.all(runners);
 }
 
 function normalizeSourceMode(mode) {
@@ -314,24 +335,74 @@ async function searchArxivDirect(title) {
     }
   }
 
-  return Array.from(scoredById.entries())
+  const rankedApiResults = Array.from(scoredById.entries())
     .sort((a, b) => b[1].score - a[1].score)
     .map(([id]) => id);
+  if (rankedApiResults.length > 0) return rankedApiResults;
+
+  log("arXiv API had no ranked matches, trying arXiv web search for:", title);
+  return searchArxivWeb(title);
 }
+
+async function searchArxivWeb(title) {
+  if (!title) return [];
+  const normalizedTitle = normalizeTitleForSearch(title) || title;
+  const url = `https://arxiv.org/search/?query=${encodeURIComponent(normalizedTitle)}&searchtype=all&source=header`;
+  const html = await callBackground(url, "FETCH_ARXIV");
+  if (!html) return [];
+
+  try {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const scored = [];
+    const rows = Array.from(doc.querySelectorAll("li.arxiv-result"));
+    rows.forEach((row) => {
+      const href = row.querySelector('p.list-title a[href*="/abs/"]')?.getAttribute("href") || "";
+      const titleText = (row.querySelector("p.title")?.textContent || "").replace(/\s+/g, " ").trim();
+      const normalizedUrl = normalizeArxivUrl(href);
+      if (!normalizedUrl || !titleText) return;
+      const score = getTitleSimilarityScore(titleText, title);
+      if (score >= 0.58) {
+        scored.push({ normalizedUrl, score });
+      }
+    });
+    scored.sort((a, b) => b.score - a.score);
+    return Array.from(new Set(scored.map((x) => x.normalizedUrl)));
+  } catch (e) {
+    log("arXiv Web Parse Error:", e);
+    return [];
+  }
+}
+
+const candidateCache = new Map();
 
 async function getCandidateArxivUrls(title, sourceMode) {
   const mode = normalizeSourceMode(sourceMode);
+  const normalizedTitle = (normalizeTitleForSearch(title) || title || "").toLowerCase();
+  const cacheKey = `${mode}|${normalizedTitle}`;
+  if (candidateCache.has(cacheKey)) return candidateCache.get(cacheKey);
+
+  let result = [];
   if (mode === SOURCE_MODES.OPENALEX) {
-    return searchOpenAlex(title);
+    result = await searchOpenAlex(title);
+    candidateCache.set(cacheKey, result);
+    return result;
   }
   if (mode === SOURCE_MODES.ARXIV) {
-    return searchArxivDirect(title);
+    result = await searchArxivDirect(title);
+    candidateCache.set(cacheKey, result);
+    return result;
   }
 
   const openAlexCandidates = await searchOpenAlex(title);
-  if (openAlexCandidates.length > 0) return openAlexCandidates;
+  if (openAlexCandidates.length > 0) {
+    result = openAlexCandidates;
+    candidateCache.set(cacheKey, result);
+    return result;
+  }
   log("Falling back to direct arXiv API for:", title);
-  return searchArxivDirect(title);
+  result = await searchArxivDirect(title);
+  candidateCache.set(cacheKey, result);
+  return result;
 }
 
 let activeInjection = false;
@@ -362,9 +433,9 @@ async function insertArXivLinks() {
     
     if (isSearchPage) {
       const headers = Array.from(document.querySelectorAll('div.font-weight-bold')).filter(d => d.querySelector('a[href*="/mathscinet/article?mr="]') && d.textContent.includes('MR'));
-      log(`Found ${headers.length} publication headers. Processing in PARALLEL...`);
+      log(`Found ${headers.length} publication headers. Processing with concurrency ${SEARCH_CONCURRENCY}...`);
       
-      const tasks = headers.map(async (header) => {
+      await mapWithConcurrency(headers, async (header) => {
         if (header.querySelector('.arxiv-link')) return;
         
         const metadata = getSearchItemMetadata(header);
@@ -376,8 +447,6 @@ async function insertArXivLinks() {
           }
         }
       });
-      
-      await Promise.all(tasks);
     } else if (location.href.includes('/article?mr=')) {
       let metadata = getArticleMetadata();
       let retries = 15;
