@@ -150,9 +150,14 @@ async function searchOpenAlex(title) {
 }
 
 let activeInjection = false;
+let pendingInjection = false;
 async function insertArXivLinks() {
-  if (activeInjection) return;
+  if (activeInjection) {
+    pendingInjection = true;
+    return;
+  }
   activeInjection = true;
+  pendingInjection = false;
 
   try {
     log("insertArXivLinks() starting...");
@@ -198,6 +203,10 @@ async function insertArXivLinks() {
     console.error("MathSciNet ArXiv Links Error:", error);
   } finally {
     activeInjection = false;
+    if (pendingInjection) {
+      pendingInjection = false;
+      void insertArXivLinks();
+    }
   }
 }
 
@@ -275,6 +284,21 @@ function processReferences() {
 }
 
 let lastUrl = location.href;
+let lastPageSignature = "";
+
+function getSearchPageSignature() {
+  const mrLinks = Array.from(document.querySelectorAll('a[href*="/mathscinet/article?mr="]'));
+  if (mrLinks.length === 0) return "";
+  return mrLinks.map((link) => {
+    const href = link.getAttribute('href') || '';
+    const match = href.match(/mr=([^&]+)/i);
+    if (match) return match[1];
+    const text = (link.textContent || '').trim();
+    const textMatch = text.match(/MR?\d+/i);
+    return textMatch ? textMatch[0] : text;
+  }).join('|');
+}
+
 function main() {
   log("main() triggered.");
   insertArXivLinks();
@@ -284,7 +308,15 @@ function main() {
 const observer = new MutationObserver(() => {
   if (location.href !== lastUrl) {
     lastUrl = location.href;
+    lastPageSignature = "";
     main();
+  } else if (location.href.includes('/publications-search') || location.href.includes('/search/publications')) {
+    // Detect pagination even when result count is unchanged
+    const signature = getSearchPageSignature();
+    if (signature && signature !== lastPageSignature) {
+      lastPageSignature = signature;
+      main();
+    }
   } else if (!document.querySelector('.arxiv-link')) {
     if (!activeInjection) main();
   }
@@ -298,9 +330,10 @@ function init() {
   setInterval(() => {
     if (location.href !== lastUrl) {
       lastUrl = location.href;
+      lastPageSignature = "";
       main();
     }
-  }, 4000);
+  }, 1000); // Reduced from 4000ms to 1000ms for faster pagination detection
 }
 
 chrome.runtime.onMessage.addListener((request) => {
